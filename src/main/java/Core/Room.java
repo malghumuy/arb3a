@@ -1,5 +1,7 @@
 package Core;
 
+import Core.Player.CharMap;
+
 // This room will allow players to join, Imagine(GUI App) have an internet connection.
 public class Room {
 
@@ -61,6 +63,16 @@ public class Room {
         return Size;
     }
 
+    public Player GetPlayerByMap(CharMap M) {
+
+
+        for (Player P : Players) {
+            if (P.Mapper == M) {
+                return P;
+            }
+        }
+        return null; // Error shouldnot happen;
+    }
 
     // ToString
     @Override

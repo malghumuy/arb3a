@@ -15,6 +15,11 @@ public class Player {
     public boolean IsDealer;
     public char Identifier; // unique id;
 
+    public CharMap Mapper;
+    public enum CharMap {
+        A, B, C, D; 
+    }
+
     private static final int SET_SIZE = 8;
     Player TeamMember; // FIXME: self refernce.
     ArrayList<Card> EatenCards; // During the game;
@@ -27,6 +32,26 @@ public class Player {
         // CardGenerator.Kick(this.CardSet, /*Initial*/ true);
         // if player buys a round CardSet.length == 8, else == 5
     }
+
+    public CharMap GetPlayerMap(int Index) {
+        switch (Index) {
+            case 1:
+                this.Mapper = CharMap.A; 
+                break;
+            case 2:
+                this.Mapper = CharMap.B;
+                break;
+            case 3:
+                this.Mapper = CharMap.C;
+                break;
+            case 4:
+            this.Mapper = CharMap.D;
+            default:
+                break;
+        }
+        return this.Mapper;
+
+    } 
 
     @Override
     public String toString() {
