@@ -35,16 +35,16 @@ public class Player {
 
     public CharMap GetPlayerMap(int Index) {
         switch (Index) {
-            case 1:
+            case 0:
                 this.Mapper = CharMap.A; 
                 break;
-            case 2:
+            case 1:
                 this.Mapper = CharMap.B;
                 break;
-            case 3:
+            case 2:
                 this.Mapper = CharMap.C;
                 break;
-            case 4:
+            case 3:
             this.Mapper = CharMap.D;
             default:
                 break;

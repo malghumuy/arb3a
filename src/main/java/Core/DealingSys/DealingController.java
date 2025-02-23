@@ -70,8 +70,14 @@ public class DealingController {
         var RandIndex = (int) Math.floor(Math.random() * (Max - Min + 1) + Min);  // Generate random int value from 0 to 3
         Dealer = CurRoom.Players[RandIndex];  // FIXME
         Dealer.IsDealer = true;
+
+        // and this is related for sure by the way the First dealer is assigned to for determinsim.
+
         CurRoom.CurrentDealer = Dealer;
         var Ignored = Dealer.GetPlayerMap(RandIndex); // Set the clock to wind.
+        CurRoom.FillPlayerMapp(RandIndex); // this is basically telling you which player was picked as the dealer and the assigned letter to it. basically.
+
+        System.err.println("The dealer is: " + Dealer.Name);
         return Dealer;
     }
 

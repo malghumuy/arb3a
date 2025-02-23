@@ -14,7 +14,7 @@ public class SessionTracker {
     DealingController DC;
     boolean IsSessionClosed = false;
 
-    Room R;
+    //Room R;
 
     public SessionTracker(Room R) {
 
@@ -82,7 +82,7 @@ public class SessionTracker {
             // Moving means the next player turn whos next player ? the one whos next to this okay ? 
             LookupMapper = DC.MapNxtDealer(StarterPlayer.Mapper);  // Do a linked list.
         
-            StarterPlayer = R.GetPlayerByMap(LookupMapper);  // this is o(n) loop
+            StarterPlayer = DC.CurRoom.GetPlayerByMap(LookupMapper);  // this is o(n) loop
 
             Idx ++;
         }

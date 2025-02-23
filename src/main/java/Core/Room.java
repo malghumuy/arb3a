@@ -79,5 +79,25 @@ public class Room {
     public String toString() {
         return "[" + this.GetSize() + "] " + "Players";
     }
+
+    public boolean FillPlayerMapp(int BasedPlayer) {
+
+        var Lookup = BasedPlayer + 1;
+        if (BasedPlayer == 3)
+            Lookup = 0;
+        
+        var CPlayer = Players[Lookup];
+        while (CPlayer.Mapper == null) {
+            CPlayer.GetPlayerMap(Lookup); // Set the player Map next to dealer.
+            Lookup ++;
+            if (Lookup == 4) 
+                Lookup = 0;  // Circling.
+
+            CPlayer = Players[Lookup];
+        }
+        return false;
+
+
+    }
 }
 
