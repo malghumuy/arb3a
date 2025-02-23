@@ -16,6 +16,7 @@ public class Room {
     String RoomCode; // TODO. for Player-created rooms
     boolean Expired;
     boolean Finished;
+    public Player CurrentDealer;
     private static long Gen;
 
 
@@ -64,7 +65,6 @@ public class Room {
     }
 
     public Player GetPlayerByMap(CharMap M) {
-
 
         for (Player P : Players) {
             if (P.Mapper == M) {

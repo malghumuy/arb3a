@@ -10,8 +10,8 @@ import java.util.ArrayList;
 public class Player {
 
     // Every player has Right to كوشة
-    String Name;
-    CardSet CardSet; // CardSet is an object holds 8 cards.
+    public String Name;
+    public CardSet CardSet; // CardSet is an object holds 8 cards.
     public boolean IsDealer;
     public char Identifier; // unique id;
 

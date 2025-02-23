@@ -1,7 +1,7 @@
 package Core;
 
 public class Arb3aCalculator {
-    enum GameType {
+    public enum GameType {
         Sun, Hukom;
     }
     GameType Type;
