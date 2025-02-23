@@ -6,13 +6,15 @@ import Core.DealingSys.SessionTracker;
 
 import java.util.Scanner;
 
+import CardEngine.CardDeck;
+
 public class Driver {
     public static void main(String[] args) {
 
 
         // 1- Receve a user request, create a room basically
 
-
+        // so now weh 
 
         var Player1 = new Player("Mohammed");
         var Player2 = new Player("Ahmed");
@@ -38,6 +40,14 @@ public class Driver {
         var bool = ST.LaunchSession();
     
         RoomPool.Shared().Dump();// Memory-leaks?
+
+
+        System.out.println("------------------------------------------");
+
+
+
+
+        CardDeck.Shared().Dump();
 
     }
 }

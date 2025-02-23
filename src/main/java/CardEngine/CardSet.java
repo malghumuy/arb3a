@@ -5,7 +5,8 @@ import Core.Project;
 import java.util.List;
 
 
-
+// We have to define card deck/
+// Which's of 32 cardsstar
 public class CardSet {
 
     ArrayOf8<Card> Cards = new ArrayOf8<>();    // Each player will have a cardset(Randomly generated);

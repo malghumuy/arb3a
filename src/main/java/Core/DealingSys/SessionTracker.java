@@ -35,19 +35,11 @@ public class SessionTracker {
         var Priority = 0;
         var ValidPriority = false;
 
-
         System.out.println(DC.Dealer.Mapper);
         var LookupMapper = DC.MapNxtDealer(DC.Dealer.Mapper);
         System.out.println(LookupMapper);
         
         var StarterPlayer = DC.CurRoom.GetPlayerByMap(LookupMapper);  // this is o(n) loop
-
-
-
-
-
-
-
 
         
         String Msg = "Sun/Hukom/Pass";
