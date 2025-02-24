@@ -47,7 +47,11 @@ public class Driver {
 
 
 
-        CardDeck.Shared().Dump();
+        // CardDeck.Shared().Dump();
+
+        for (Player players : TheRoom.Players) {
+            System.out.println(players);
+        }
 
     }
 }

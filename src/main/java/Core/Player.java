@@ -58,6 +58,7 @@ public class Player {
         return "Player{" +
                 "Name='" + Name + '\'' +
                 "ID_INSIDE_ROOM=" + Identifier + '\'' +
+                "TEAM_MEMBER=" + TeamMember.Name + '\'' +
                 '}';
     }
 }

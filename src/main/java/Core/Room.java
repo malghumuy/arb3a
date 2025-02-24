@@ -80,6 +80,29 @@ public class Room {
         return "[" + this.GetSize() + "] " + "Players";
     }
 
+
+    private CharMap GetTeamMap(CharMap Pair) {
+
+        // FIXME: This is basically repeated, resolve it somewhere spot.
+
+
+        // if we get Pair A, should return C 
+
+        switch (Pair) {
+            case A:
+                return CharMap.C;
+                case B:
+                return CharMap.D;
+                case C:
+                return CharMap.A;
+                case D:
+                return CharMap.B;
+            default:
+            return null; // unreachable
+                // break;
+        }
+
+    }
     public boolean FillPlayerMapp(int BasedPlayer) {
 
         var Lookup = BasedPlayer + 1;
@@ -94,6 +117,17 @@ public class Room {
                 Lookup = 0;  // Circling.
 
             CPlayer = Players[Lookup];
+        }
+
+        // Fix me, we need a data structure, A linkedlist and, HashMap.
+        var Idx = 0;
+
+        while (Idx < 4) {
+
+            var current = Players[Idx];
+            var TeamPair = GetPlayerByMap(GetTeamMap(current.Mapper)); // check if null
+            current.TeamMember = TeamPair;
+            Idx ++;
         }
         return false;
 
