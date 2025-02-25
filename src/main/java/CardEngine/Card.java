@@ -12,18 +12,71 @@ public class Card implements Comparable<Card> {
     public CardColor Color;
 
     public CardName Name;
-    public int Value;  // set card priority.
+    private int Value = -1;  // set card priority.
+    // Ten = 10 in sun and hukom,
+    // King, 4 in both.
+    // Queen, 3 both
+    // Ace, 11 both
+    // Jack, 2 sun, 20 hukom,
+    // 9 14 only in hukom
 
     public Card(CardName N) {
         Name = N;
 
     }
 
-    protected Card(CardName N, CardColor C, int V) {
+    protected Card(CardName N, CardColor C) {
         Name = N;
         Color = C;
-        Value = V;
+
+        DeterminePriority(N);
     }
+
+
+    private void DeterminePriority(CardName N) {
+        switch (N) {
+            case Seven, Eight, Nine:
+                this.Value = 0; // Default
+                break;
+            case Ten:
+                this.Value = 10;
+                break;
+            case Jack:
+                this.Value = 2;  // Default, Hukom should change this.
+                break;
+            case Queen:
+                this.Value = 3;
+                break;
+            case King:
+                this.Value = 4;
+                break;
+            case Ace:
+                this.Value = 11;
+                break;
+            default:
+            // this.Value = -1;
+                break; // unrechable
+        }
+    }
+
+    public boolean SetForceException(int ChangeValue) {
+
+
+        assert (this.Name == CardName.Nine || this.Name == CardName.Jack);
+
+        if (ChangeValue != 14 && ChangeValue != 20)
+            return false;
+
+
+        this.Value = ChangeValue;
+        return true;
+        
+
+        
+    }
+
+    // This is the default value, regardless of the GameType. Another phase is required.
+    public int GetDefultValue() { return this.Value; }
 
     @Override 
     public int compareTo(Card Other) {

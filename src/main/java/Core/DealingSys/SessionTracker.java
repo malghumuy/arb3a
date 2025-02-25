@@ -28,6 +28,10 @@ public class SessionTracker {
             return false; // The room is already in a session, basically
         }
 
+        // session knows the type of the purchase here.
+        // so we should inform the concerned entity.
+        // in return 
+
 
 
         var Idx = 0;

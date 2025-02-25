@@ -55,7 +55,7 @@ public class CardDeck  {
                 Divider += 1;
                 ColorIdx = 0;
             }
-            Cards[Idx] = new Card(Names[Divider], Colors[ColorIdx], 10); // We will see into the priorioryt
+            Cards[Idx] = new Card(Names[Divider], Colors[ColorIdx]); // We will see into the priorioryt
             ColorIdx ++;
             Idx ++;
         }
@@ -66,7 +66,7 @@ public class CardDeck  {
         for (Card C : Cards) {
             System.out.println("Deck is: " + C.Name);
             System.out.println("Deck is: " + C.Color);
-            System.out.println("Deck is: " + C.Value);
+            System.out.println("Deck is: " + C.GetDefultValue());
         }
     }
     
