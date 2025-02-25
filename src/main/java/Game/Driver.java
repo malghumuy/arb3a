@@ -1,12 +1,15 @@
 package Game;
 
+import Core.Arb3aCalculator;
 import Core.Player;
 import Core.RoomPool;
+import Core.Arb3aCalculator.GameType;
 import Core.DealingSys.SessionTracker;
-
-import java.util.Scanner;
-
+import Core.Hukom.HukomColor;
+import CardEngine.Card;
 import CardEngine.CardDeck;
+import CardEngine.Card.CardColor;
+import CardEngine.Card.CardName;
 
 public class Driver {
     public static void main(String[] args) {
@@ -47,12 +50,24 @@ public class Driver {
 
 
 
-        CardDeck.Shared().Dump();
+        // CardDeck.Shared().Dump();
 
         for (Player players : TheRoom.Players) {
             System.out.println(players);
         }
 
+
+        var calculator = new Arb3aCalculator(GameType.Hukom);
+
+        // The cards, by the CardDeckSuffle, and the Hukom/Sun by the session/halla tracker.
+        calculator.HotCalculation(new Card[] {
+
+            new Card(CardName.Nine, CardColor.Club),
+            new Card(CardName.Jack, CardColor.Club),
+            new Card(CardName.Ace, CardColor.Heart),
+            new Card(CardName.King, CardColor.Diamond)
+
+        }, HukomColor.Club);
     }
 }
 

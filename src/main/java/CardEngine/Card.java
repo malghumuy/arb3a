@@ -25,7 +25,7 @@ public class Card implements Comparable<Card> {
 
     }
 
-    protected Card(CardName N, CardColor C) {
+    public Card(CardName N, CardColor C) {
         Name = N;
         Color = C;
 
