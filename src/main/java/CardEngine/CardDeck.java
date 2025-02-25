@@ -1,5 +1,8 @@
 package CardEngine;
 
+import java.util.Random;
+import java.util.logging.LogRecord;
+
 public class CardDeck  {
     private  static Card[] Cards;
     // it should be allocated by the user or what ?
@@ -59,6 +62,7 @@ public class CardDeck  {
             ColorIdx ++;
             Idx ++;
         }
+        Shuffle();
         return true;
     }
 
@@ -67,6 +71,25 @@ public class CardDeck  {
             System.out.println("Deck is: " + C.Name);
             System.out.println("Deck is: " + C.Color);
             System.out.println("Deck is: " + C.GetDefultValue());
+        }
+    }
+
+
+        // Fisher-Yates Shuffle adapted for Card[]
+    private static void Shuffle() {
+        var R = new Random();
+        var Length = Cards.length;
+
+        // Fisher-Yates shuffle with while loop
+        var I = Length - 1;
+        while (I > 0) {
+            var J = R.nextInt(I + 1);
+
+            // Swap cards[i] and cards[j]
+            var temp = Cards[I];
+            Cards[I] = Cards[J];
+            Cards[J] = temp;
+            I--;
         }
     }
     

@@ -50,24 +50,25 @@ public class Driver {
 
 
 
-        // CardDeck.Shared().Dump();
+        CardDeck.Shared().Dump();
 
-        for (Player players : TheRoom.Players) {
-            System.out.println(players);
-        }
+        // for (Player players : TheRoom.Players) {
+        //     System.out.println(players);
+        // }
 
 
-        var calculator = new Arb3aCalculator(GameType.Hukom);
+        // var calculator = new Arb3aCalculator(GameType.Hukom);
 
-        // The cards, by the CardDeckSuffle, and the Hukom/Sun by the session/halla tracker.
-        calculator.HotCalculation(new Card[] {
+        // // The cards, by the CardDeckSuffle, and the Hukom/Sun by the session/halla tracker.
+        // calculator.HotCalculation(new Card[] {
 
-            new Card(CardName.Nine, CardColor.Club),
-            new Card(CardName.Jack, CardColor.Club),
-            new Card(CardName.Ace, CardColor.Heart),
-            new Card(CardName.King, CardColor.Diamond)
+        //     new Card(CardName.Nine, CardColor.Club),
+        //     new Card(CardName.Jack, CardColor.Club),
+        //     new Card(CardName.Ace, CardColor.Heart),
+        //     new Card(CardName.King, CardColor.Diamond)
 
-        }, HukomColor.Club);
+        // }, HukomColor.Club);
+
     }
 }
 
